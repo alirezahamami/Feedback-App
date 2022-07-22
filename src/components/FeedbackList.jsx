@@ -4,15 +4,16 @@ import FeedbackItem from './FeedbackItem'
 import FeedbackStat from "./FeedbackStat" //component for the statistics
 import InputFeedback from "./InputFeedback"
 import FeedbackContext from '../context/FeedbackContext'
+import Spinner from './Spiner'
 
 function FeedbackList({reversColor}) {
-    const {Feedback} = useContext(FeedbackContext)
+    const {Feedback,isLoaded} = useContext(FeedbackContext)
     return (
         <div>
             <InputFeedback/>
             <div className="feedback-list">
-                <FeedbackStat/> {
-                    (Feedback.length > 0) //empty data showing no feedback
+                <FeedbackStat/> 
+                    {isLoaded?  (Feedback.length > 0) //empty data showing no feedback
                         ? <div>{Feedback.map((Feedback) => (
                                         <AnimatePresence >
                                             <motion.div
@@ -31,7 +32,9 @@ function FeedbackList({reversColor}) {
                                     ))
                                 }</div>
                         : <h1>No feedback yet.</h1>
-                }
+                 : <div><Spinner /></div> }
+
+                    
             </div>
         </div>
     )

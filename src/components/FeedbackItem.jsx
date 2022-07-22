@@ -6,8 +6,14 @@ function FeedbackItem({text, id, rate, mode}) {
     
     const {Setfeedback,Setupdate} = useContext(FeedbackContext)
     
+    const DeletfeedbackServer = async(id) => {
+        await fetch(`/feedback/${id}`, 
+        {method: 'DELETE'}) }
+
+
     function handleDelet(){
             if (window.confirm('Are you sure to delet?')) {
+                DeletfeedbackServer(id)
                 Setfeedback(prevValue => prevValue.filter( (prevValue) => (prevValue.id !== id)))
             }
         }

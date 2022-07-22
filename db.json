@@ -1,0 +1,19 @@
+{
+  "feedback": [
+    {
+      "id": 1,
+      "text": "from Json API - he is very nice boy he guided us everywhere in the city",
+      "rate": 5
+    },
+    {
+      "id": 2,
+      "text": "from Json API - she has a charming house and we went off the road by her car",
+      "rate": 8
+    },
+    {
+      "text": "from Json API - the service is awfull, I can't recomneded it to anyone",
+      "rate": 1,
+      "id": 3
+    }
+  ]
+}
